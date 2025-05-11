@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="menu-screen" aria-label="Main menu">
+    <h1>Tic-Tac-Toe</h1>
+    <div class="mode-selection">
+      <button id="pvp-btn" onclick="startPvP()" aria-label="Play against a friend">Play Against a Friend</button>
+      <button id="bot-btn" onclick="showDifficultySelection()" aria-label="Play against bot">Play Against Bot</button>
+    </div>
+  </div>
+
+  <div class="container" id="difficulty-screen" style="display: none;" aria-label="Select difficulty">
+    <h1>Choose Difficulty</h1>
+    <div class="difficulty-bar">
+      <button onclick="startBot('easy')" aria-label="Easy difficulty">😅 Easy</button>
+      <button onclick="startBot('medium')" aria-label="Medium difficulty">😊 Medium</button>
+      <button onclick="startBot('hard')" aria-label="Hard difficulty">😎 Hard</button>
+      <button onclick="startBot('ultra-hard')" aria-label="Ultra hard difficulty">🤖 Ultra Hard</button>
+    </div>
+    <button onclick="backToMenu()" aria-label="Back to menu">Back to Menu</button>
+  </div>
+
+  <div class="container" id="game-screen" style="display: none;" aria-label="Game board and controls">
+    <h1>Tic-Tac-Toe</h1>
+    <div id="status" aria-live="polite" aria-atomic="true">Player X's Turn</div>
+    <div class="board" id="board" role="grid" aria-describedby="status">
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Top Left"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Top Center"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Top Right"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Middle Left"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Middle Center"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Middle Right"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Bottom Left"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Bottom Center"></div>
+      <div class="cell" data-cell role="gridcell" tabindex="0" aria-label="Bottom Right"></div>
+    </div>
+    <button id="reset-button" onclick="resetGame()" aria-label="Reset game">Reset Game</button>
+    <button onclick="backToMenu()" aria-label="Back to menu">Back to Menu</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
